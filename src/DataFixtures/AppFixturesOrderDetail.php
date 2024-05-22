@@ -11,6 +11,7 @@ use App\Repository\StoreRepository;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
+use Ramsey\Uuid\Uuid;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixturesOrderDetail extends Fixture implements DependentFixtureInterface
@@ -38,9 +39,9 @@ class AppFixturesOrderDetail extends Fixture implements DependentFixtureInterfac
             $totalByOrder = 0;
             foreach($orderDetailCount as $count){
                 $orderDetail = new OrderDetail();
-                $uniqueId = $this->generateUniqueUserId();
+                $uniqueId = Uuid::uuid4();
                 // $orderDetail->setId($uniqueId);
-                $orderDetail->setOrderDetailId($uniqueId);
+                $orderDetail->setOrderDetailId($uniqueId->toString());
                 $orderDetail->setOrderId($order);
                 $product = $products[array_rand($products)];
                 $orderDetail->setProductId($product);

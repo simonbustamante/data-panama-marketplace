@@ -16,7 +16,7 @@ class Category
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $categoryId = null;
+    private ?string $categoryId = null;
 
     #[ORM\Column(length: 255)]
     private ?string $name = null;
@@ -45,12 +45,12 @@ class Category
         return $this;
     }
 
-    public function getCategoryId(): ?int
+    public function getCategoryId(): ?string
     {
         return $this->categoryId;
     }
 
-    public function setCategoryId(int $categoryId): static
+    public function setCategoryId(string $categoryId): static
     {
         $this->categoryId = $categoryId;
 

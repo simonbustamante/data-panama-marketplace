@@ -15,7 +15,7 @@ class Payment
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $paymentId = null;
+    private ?string $paymentId = null;
 
     #[ORM\ManyToOne]
     private ?Order $orderId = null;
@@ -39,12 +39,12 @@ class Payment
         return $this;
     }
 
-    public function getPaymentId(): ?int
+    public function getPaymentId(): ?string
     {
         return $this->paymentId;
     }
 
-    public function setPaymentId(int $paymentId): static
+    public function setPaymentId(string $paymentId): static
     {
         $this->paymentId = $paymentId;
 

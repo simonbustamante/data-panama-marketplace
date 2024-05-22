@@ -15,7 +15,7 @@ class StoreReview
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $reviewId = null;
+    private ?string $reviewId = null;
 
     #[ORM\ManyToOne]
     private ?Store $storeId = null;
@@ -42,12 +42,12 @@ class StoreReview
         return $this;
     }
 
-    public function getReviewId(): ?int
+    public function getReviewId(): ?string
     {
         return $this->reviewId;
     }
 
-    public function setReviewId(int $reviewId): static
+    public function setReviewId(string $reviewId): static
     {
         $this->reviewId = $reviewId;
 

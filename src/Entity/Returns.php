@@ -15,7 +15,7 @@ class Returns
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $returnId = null;
+    private ?string $returnId = null;
 
     #[ORM\ManyToOne]
     private ?Order $orderId = null;
@@ -42,12 +42,12 @@ class Returns
         return $this;
     }
 
-    public function getReturnId(): ?int
+    public function getReturnId(): ?string
     {
         return $this->returnId;
     }
 
-    public function setReturnId(int $returnId): static
+    public function setReturnId(string $returnId): static
     {
         $this->returnId = $returnId;
 

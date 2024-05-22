@@ -15,7 +15,7 @@ class Recommendation
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $recommendationId = null;
+    private ?string $recommendationId = null;
 
     #[ORM\ManyToOne]
     private ?Product $productId = null;
@@ -42,12 +42,12 @@ class Recommendation
         return $this;
     }
 
-    public function getRecommendationId(): ?int
+    public function getRecommendationId(): ?string
     {
         return $this->recommendationId;
     }
 
-    public function setRecommendationId(int $recommendationId): static
+    public function setRecommendationId(string $recommendationId): static
     {
         $this->recommendationId = $recommendationId;
 

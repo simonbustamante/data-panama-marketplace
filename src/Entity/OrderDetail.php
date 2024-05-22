@@ -17,7 +17,7 @@ class OrderDetail
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $orderDetailId = null;
+    private ?string $orderDetailId = null;
 
     #[ORM\ManyToOne(inversedBy: 'orderDetails')]
     private ?Order $orderId = null;
@@ -44,12 +44,12 @@ class OrderDetail
         return $this;
     }
 
-    public function getOrderDetailId(): ?int
+    public function getOrderDetailId(): ?string
     {
         return $this->orderDetailId;
     }
 
-    public function setOrderDetailId(int $orderDetailId): static
+    public function setOrderDetailId(string $orderDetailId): static
     {
         $this->orderDetailId = $orderDetailId;
 

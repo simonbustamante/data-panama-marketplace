@@ -19,7 +19,7 @@ class Product
 
     
     #[ORM\Column]
-    private ?int $productId = null;
+    private ?string $productId = null;
 
     #[ORM\Column(length: 255)]
     private ?string $name = null;
@@ -73,12 +73,12 @@ class Product
         return $this;
     }
 
-    public function getProductId(): ?int
+    public function getProductId(): ?string
     {
         return $this->productId;
     }
 
-    public function setProductId(int $productId): static
+    public function setProductId(string $productId): static
     {
         $this->productId = $productId;
 

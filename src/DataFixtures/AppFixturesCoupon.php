@@ -103,8 +103,8 @@ class AppFixturesCoupon extends Fixture implements DependentFixtureInterface
         for($i = 0; $i < $j ; $i++) {
 
                 $coupon = new Coupon();
-                $uniqueId = time() + mt_rand(30000, 40000);
-                $coupon->setCouponId($uniqueId);
+                $uniqueId = Uuid::uuid4();
+                $coupon->setCouponId($uniqueId->toString());
                 $uuid = Uuid::uuid4();
                 $coupon->setCode($uuid->toString());
                 $discount = $this->discounts[array_rand($this->discounts)];

@@ -15,7 +15,7 @@ class Coupon
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $couponId = null;
+    private ?string $couponId = null;
 
     #[ORM\Column(length: 255)]
     private ?string $code = null;
@@ -48,12 +48,12 @@ class Coupon
         return $this;
     }
 
-    public function getCouponId(): ?int
+    public function getCouponId(): ?string
     {
         return $this->couponId;
     }
 
-    public function setCouponId(int $couponId): static
+    public function setCouponId(string $couponId): static
     {
         $this->couponId = $couponId;
 

@@ -15,7 +15,7 @@ class ProductReview
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $review_id = null;
+    private ?string $review_id = null;
 
     #[ORM\Column]
     private ?int $rating = null;
@@ -43,12 +43,12 @@ class ProductReview
         return $this;
     }
 
-    public function getReviewId(): ?int
+    public function getReviewId(): ?string
     {
         return $this->review_id;
     }
 
-    public function setReviewId(int $review_id): static
+    public function setReviewId(string $review_id): static
     {
         $this->review_id = $review_id;
 

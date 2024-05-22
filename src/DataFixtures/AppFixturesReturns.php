@@ -54,8 +54,8 @@ class AppFixturesReturns extends Fixture implements DependentFixtureInterface
         foreach ($products as $product) {
             foreach($orders as $order){
                 $returns = new Returns();
-                $uniqueId = time() + mt_rand(30000, 40000);
-                $returns->setReturnId($uniqueId);
+                $uniqueId = Uuid::uuid4();
+                $returns->setReturnId($uniqueId->toString());
                 $returns->setOrderId($order);
                 $returns->setProductId($product);
                 $date = new \DateTime();

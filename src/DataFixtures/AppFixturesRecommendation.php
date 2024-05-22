@@ -293,8 +293,8 @@ class AppFixturesRecommendation extends Fixture implements DependentFixtureInter
         foreach($users as $user){
             foreach($products as $product){
                 $recommendation = new Recommendation();
-                $uniqueId = time() + mt_rand(30000, 40000);
-                $recommendation->setRecommendationId($uniqueId);
+                $uniqueId = Uuid::uuid4();
+                $recommendation->setRecommendationId($uniqueId->toString());
                 $rec = $this->rec[array_rand($this->rec)];
                 $recommendation->setUserId($user);
                 $recommendation->setProductId($product);

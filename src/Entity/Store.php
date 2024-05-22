@@ -17,7 +17,7 @@ class Store
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $storeId = null;
+    private ?string $storeId = null;
 
     #[ORM\Column(length: 255)]
     private ?string $name = null;
@@ -66,12 +66,12 @@ class Store
         return $this;
     }
 
-    public function getStoreId(): ?int
+    public function getStoreId(): ?string
     {
         return $this->storeId;
     }
 
-    public function setStoreId(int $storeId): static
+    public function setStoreId(string $storeId): static
     {
         $this->storeId = $storeId;
 

@@ -62,8 +62,8 @@ class AppFixturesShipment extends Fixture implements DependentFixtureInterface
                 $shipmentAmount = $rand;
 
                 $shipment = new Shipment();
-                $uniqueId = time() + mt_rand(30000, 40000);
-                $shipment->setShipmentId($uniqueId);
+                $uniqueId = Uuid::uuid4();
+                $shipment->setShipmentId($uniqueId->toString());
                 $shipment->setOrderId($order);
                 $date = new \DateTime();
                 $shipment->setShipmentDate($date);

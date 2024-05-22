@@ -9,6 +9,7 @@ use App\Repository\StoreRepository;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
+use Ramsey\Uuid\Uuid;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixturesProduct extends Fixture implements DependentFixtureInterface
@@ -334,9 +335,9 @@ class AppFixturesProduct extends Fixture implements DependentFixtureInterface
                 foreach($stores as $store)  {
                     foreach($this->foods as $food){
                         $product = new Product();
-                        $uniqueId = time() + mt_rand(0, 9999);
-                        $product->setId($uniqueId);
-                        $product->setProductId($uniqueId);
+                        $uniqueId = Uuid::uuid4();
+                        
+                        $product->setProductId($uniqueId->toString());
                         $product->setStoreId($store);
                         $product->setName($food['name']);
                         $product->setDescription("Description ".$product->getName());

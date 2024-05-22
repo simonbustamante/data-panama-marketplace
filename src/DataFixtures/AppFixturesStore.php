@@ -8,6 +8,7 @@ use App\Repository\UserRepository;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
+use Ramsey\Uuid\Uuid;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixturesStore extends Fixture implements DependentFixtureInterface
@@ -24,9 +25,9 @@ class AppFixturesStore extends Fixture implements DependentFixtureInterface
         $users = $this->userRepository->findAll();
         foreach($users as $user)  {
             $store = new Store();
-            $uniqueId = time() + mt_rand(0, 9999);
+            $uniqueId = Uuid::uuid4();
             // $store->setId($uniqueId);
-            $store->setStoreId($uniqueId);
+            $store->setStoreId($uniqueId->toString());
             $store->setUser($user);
             $store->setName('Store ' . $user->getName());
             $store->setDescription('Description for store ' . $user->getName());

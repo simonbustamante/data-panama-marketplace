@@ -7,6 +7,7 @@ use App\Repository\UserRepository;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
+use Ramsey\Uuid\Uuid;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixturesOrder extends Fixture implements DependentFixtureInterface
@@ -27,11 +28,11 @@ class AppFixturesOrder extends Fixture implements DependentFixtureInterface
         foreach($orderCount as $count){
             foreach($users as $user)  {
                 $order = new Order();
-                $uniqueId = $this->generateUniqueUserId();
+                $uniqueId = Uuid::uuid4();
                 // $order->setId($uniqueId);
 
                 //dump($order->getId());dump($uniqueId);die();
-                $order->setOrderId($uniqueId);
+                $order->setOrderId($uniqueId->toString());
                 $order->setUserId($user);
                 $date = new \DateTime();
                 $order->setOrderDate($date);

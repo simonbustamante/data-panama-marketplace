@@ -8,6 +8,7 @@ use App\Repository\OrderRepository;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
+use Ramsey\Uuid\Uuid;
 
 class AppFixturesPayment extends Fixture implements DependentFixtureInterface
 {
@@ -78,8 +79,8 @@ class AppFixturesPayment extends Fixture implements DependentFixtureInterface
                 $paymentAmount = $amount / $rand;
 
                 $payment = new Payment();
-                $uniqueId = time() + mt_rand(30000, 40000);
-                $payment->setPaymentId($uniqueId);
+                $uniqueId = Uuid::uuid4();
+                $payment->setPaymentId($uniqueId->toString());
                 $payment->setOrderId($order);
                 $payment->setPaymentDate(new \DateTime());
                 $payment->setAmount($paymentAmount);

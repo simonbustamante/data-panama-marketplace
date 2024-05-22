@@ -15,7 +15,7 @@ class BrowsingHistory
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $historyId = null;
+    private ?string $historyId = null;
 
     #[ORM\ManyToOne]
     private ?Product $productId = null;
@@ -36,12 +36,12 @@ class BrowsingHistory
         return $this;
     }
 
-    public function getHistoryId(): ?int
+    public function getHistoryId(): ?string
     {
         return $this->historyId;
     }
 
-    public function setHistoryId(int $historyId): static
+    public function setHistoryId(string $historyId): static
     {
         $this->historyId = $historyId;
 

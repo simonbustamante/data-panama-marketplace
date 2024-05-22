@@ -15,7 +15,7 @@ class Wishlist
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $wishlistId = null;
+    private ?string $wishlistId = null;
 
     #[ORM\ManyToOne]
     private ?Product $productId = null;
@@ -36,12 +36,12 @@ class Wishlist
         return $this;
     }
 
-    public function getWishlistId(): ?int
+    public function getWishlistId(): ?string
     {
         return $this->wishlistId;
     }
 
-    public function setWishlistId(int $wishlistId): static
+    public function setWishlistId(string $wishlistId): static
     {
         $this->wishlistId = $wishlistId;
 

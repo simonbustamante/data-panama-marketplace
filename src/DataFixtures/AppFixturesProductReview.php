@@ -91,8 +91,8 @@ class AppFixturesProductReview extends Fixture implements DependentFixtureInterf
                 for ($i = 0; $i < $rand; $i++) {
                     $shipmentAmount = $rand;
                     $productReview = new ProductReview();
-                    $uniqueId = time() + mt_rand(30000, 40000);
-                    $productReview->setReviewId($uniqueId);
+                    $uniqueId = Uuid::uuid4();
+                    $productReview->setReviewId($uniqueId->toString());
                     $productReview->setProductId($product);
                     $productReview->setUserId($user);
                     $review = $this->genericReviews[array_rand($this->genericReviews)];

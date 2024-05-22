@@ -92,8 +92,8 @@ class AppFixturesStoreReview extends Fixture implements DependentFixtureInterfac
             foreach($users as $user){
                 for ($i = 0; $i < $rand; $i++) {
                     $storeReview = new StoreReview();
-                    $uniqueId = time() + mt_rand(30000, 40000);
-                    $storeReview->setReviewId($uniqueId);
+                    $uniqueId = Uuid::uuid4();
+                    $storeReview->setReviewId($uniqueId->toString());
                     $storeReview->setStoreId($store);
                     $storeReview->setUserId($user);
                     $review = $this->genericReviews[array_rand($this->genericReviews)];

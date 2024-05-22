@@ -34,8 +34,8 @@ class AppFixturesWishlist extends Fixture implements DependentFixtureInterface
         foreach ($products as $product) {
             foreach($users as $user){
                 $wishlist = new Wishlist();
-                $uniqueId = time() + mt_rand(30000, 40000);
-                $wishlist->setWishlistId($uniqueId);
+                $uniqueId = Uuid::uuid4();
+                $wishlist->setWishlistId($uniqueId->toString());
                 $wishlist->setProductId($product);
                 $wishlist->setUserId($user);
                 $date = new \DateTime();

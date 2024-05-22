@@ -17,7 +17,7 @@ class Order
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $orderId = null;
+    private ?string $orderId = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $orderDate = null;
@@ -41,12 +41,12 @@ class Order
         return $this;
     }
 
-    public function getOrderId(): ?int
+    public function getOrderId(): ?string
     {
         return $this->orderId;
     }
 
-    public function setOrderId(int $orderId): static
+    public function setOrderId(string $orderId): static
     {
         $this->orderId = $orderId;
 

@@ -15,7 +15,7 @@ class Shipment
     private ?int $id = null;
 
     #[ORM\Column]
-    private ?int $shipment_id = null;
+    private ?string $shipment_id = null;
 
     #[ORM\ManyToOne]
     private ?Order $orderId = null;

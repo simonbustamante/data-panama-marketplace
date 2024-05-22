@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Ramsey\Uuid\Uuid;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixturesUser extends Fixture
@@ -127,10 +128,10 @@ class AppFixturesUser extends Fixture
     {
         for ($i = 0; $i < 2; $i++) {
             $user = new User();
-            $uniqueId = $this->generateUniqueUserId();
+            $uniqueId = Uuid::uuid4();
             // $user->setId($uniqueId);
             $user->setName($this->getRandomFullName());
-            $user->setUserId($this->generateUniqueUserId($uniqueId));
+            $user->setUserId($this->generateUniqueUserId($uniqueId->toString()));
             $user->setEmail($this->createFakeUserEmail($user->getName(), $uniqueId));
             $user->setRoles(['ROLE_USER']);
             $user->setAddress($this->getRandomAddress());
