@@ -314,9 +314,9 @@ class AppFixturesProduct extends Fixture implements DependentFixtureInterface
                 foreach($stores as $store)  {
                     foreach($this->home_appliances as $appliance){
                         $product = new Product();
-                        $uniqueId = time() + mt_rand(0, 9999);
+                        $uniqueId = Uuid::uuid4();
                         // $product->setId($uniqueId);
-                        $product->setProductId($uniqueId);
+                        $product->setProductId($uniqueId->toString());
                         $product->setStoreId($store);
                         $product->setName($appliance['name']." ".$this->brands[array_rand($this->brands)]);
                         $product->setDescription("Description ".$product->getName());
