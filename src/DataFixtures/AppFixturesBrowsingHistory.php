@@ -161,7 +161,7 @@ class AppFixturesBrowsingHistory extends Fixture implements DependentFixtureInte
         $products = $this->productRepository->findAll(); 
 
         foreach($users as $user){
-            for($i=0;$i<100;$i++){
+            for($i=0;$i<10;$i++){
                 foreach($products as $product){
                     $bh = new BrowsingHistory();
                     $uniqueId = Uuid::uuid4();
