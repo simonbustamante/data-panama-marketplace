@@ -69,7 +69,7 @@ class AppFixturesPayment extends Fixture implements DependentFixtureInterface
         $orders = $this->orderRepository->findAll(); 
 
         //define la cantidad de pagos
-        $rand = mt_rand(2, 4);
+        $rand = mt_rand(1, 3);
         
 
         foreach ($orders as $order) {

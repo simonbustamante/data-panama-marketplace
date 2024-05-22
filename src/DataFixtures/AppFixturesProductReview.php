@@ -85,6 +85,7 @@ class AppFixturesProductReview extends Fixture implements DependentFixtureInterf
 
         //define la cantidad de comentarios
         $rand = mt_rand(5, 10);
+        $rand = 1;
         
         foreach ($products as $product) {
             foreach($users as $user){

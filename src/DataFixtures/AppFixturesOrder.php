@@ -24,7 +24,7 @@ class AppFixturesOrder extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
         $users = $this->userRepository->findAll();
-        $orderCount = [1,2,3,4,5];
+        $orderCount = [1,2];
         foreach($orderCount as $count){
             foreach($users as $user)  {
                 $order = new Order();
