@@ -127,6 +127,7 @@ class AppFixturesUser extends Fixture
     public function load(ObjectManager $manager)
     {
         for ($i = 0; $i < 2; $i++) {
+            echo $i." ";
             $user = new User();
             $uniqueId = Uuid::uuid4();
             // $user->setId($uniqueId);

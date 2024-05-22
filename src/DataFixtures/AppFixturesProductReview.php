@@ -89,6 +89,7 @@ class AppFixturesProductReview extends Fixture implements DependentFixtureInterf
         
         foreach ($products as $product) {
             foreach($users as $user){
+                echo $user->getName().", ";
                 for ($i = 0; $i < $rand; $i++) {
                     $shipmentAmount = $rand;
                     $productReview = new ProductReview();
