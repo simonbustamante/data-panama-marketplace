@@ -33,7 +33,7 @@ class AppFixturesOrderDetail extends Fixture implements DependentFixtureInterfac
     {
         $orders = $this->orderRepository->findAll();
         $products = $this->productRepository->findAll();
-        
+        //dump($products);die();
         $orderDetailCount = [1,2,3];
         foreach($orders as $order){
             $totalByOrder = 0;

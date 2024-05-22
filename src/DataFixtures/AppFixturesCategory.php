@@ -33,7 +33,7 @@ class AppFixturesCategory extends Fixture implements DependentFixtureInterface
             $category = new Category();
             // $category->setId($count);
             $category->setCategoryId($uniqueId->toString());
-            $category->setName($cat['name']." ".$uniqueId->toString());
+            $category->setName($cat['name']);
             $category->setDescription("Description " . $cat['name']." ".$uniqueId->toString());
             $manager->persist($category);
         }
