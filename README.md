@@ -107,6 +107,8 @@
 - `user_id` (FK, Integer): Usuario receptor.
 - `product_id` (FK, Integer): Producto recomendado.
 - `created_date` (Datetime): Fecha de creación.
+- `status` (string)
+- `reason` (string)
 
 ### Tabla de Historial de Navegación (`browsing_history`)
 - `history_id` (PK, Integer): Identificador único.
