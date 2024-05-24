@@ -105,10 +105,14 @@ class AppFixturesProductReview extends Fixture implements DependentFixtureInterf
                     
                     $manager->persist($productReview);
                 }
+                // Flush after processing all reviews for the current user
+                $manager->flush();
+                // Clear the managed state of the objects to free memory
+                $manager->clear(ProductReview::class);
             }
             
         }
-        $manager->flush();
+        //$manager->flush();
     }
 
     public function getDependencies()

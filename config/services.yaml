@@ -25,3 +25,47 @@ services:
     App\DataFixtures\AppFixturesUser:
         arguments:
             $passwordHasher: '@security.password_hasher'
+        tags:
+            - { name: doctrine.fixture.orm, group: user }
+    App\DataFixtures\AppFixturesBrowsingHistory:
+        tags:
+            - { name: doctrine.fixture.orm, group: browsing_history }
+    App\DataFixtures\AppFixturesCategory:
+        tags:
+            - { name: doctrine.fixture.orm, group: category }
+    App\DataFixtures\AppFixturesCoupon:
+        tags:
+            - { name: doctrine.fixture.orm, group: coupon }
+    App\DataFixtures\AppFixturesOrder:
+        tags:
+            - { name: doctrine.fixture.orm, group: order }
+    App\DataFixtures\AppFixturesOrderDetail:
+        tags:
+            - { name: doctrine.fixture.orm, group: order_detail }
+    App\DataFixtures\AppFixturesPayment:
+        tags:
+            - { name: doctrine.fixture.orm, group: payment }
+    App\DataFixtures\AppFixturesProduct:
+        tags:
+            - { name: doctrine.fixture.orm, group: product }
+    App\DataFixtures\AppFixturesProductReview:
+        tags:
+            - { name: doctrine.fixture.orm, group: product_review }
+    App\DataFixtures\AppFixturesRecommendation:
+        tags:
+            - { name: doctrine.fixture.orm, group: recommendation }
+    App\DataFixtures\AppFixturesReturns:
+        tags:
+            - { name: doctrine.fixture.orm, group: returns }
+    App\DataFixtures\AppFixturesShipment:
+        tags:
+            - { name: doctrine.fixture.orm, group: shipment }
+    App\DataFixtures\AppFixturesStore:
+        tags:
+            - { name: doctrine.fixture.orm, group: store }
+    App\DataFixtures\AppFixturesStoreReview:
+        tags:
+            - { name: doctrine.fixture.orm, group: store_review } 
+    App\DataFixtures\AppFixturesWishlist:
+        tags:
+            - { name: doctrine.fixture.orm, group: wishlist }
