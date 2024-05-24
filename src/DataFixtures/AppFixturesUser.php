@@ -132,7 +132,7 @@ class AppFixturesUser extends Fixture
             $uniqueId = Uuid::uuid4();
             // $user->setId($uniqueId);
             $user->setName($this->getRandomFullName());
-            $user->setUserId($this->generateUniqueUserId($uniqueId->toString()));
+            $user->setUserId($uniqueId->toString());
             $user->setEmail($this->createFakeUserEmail($user->getName(), $uniqueId));
             $user->setRoles(['ROLE_USER']);
             $user->setAddress($this->getRandomAddress());
